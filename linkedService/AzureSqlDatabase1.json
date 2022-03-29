@@ -6,7 +6,7 @@
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=servidorsuperpro.database.windows.net;initial catalog=Rox;user id=superpro",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVGREFEOTQyLUVBMDItNEIyMy04QjlFLUJBQUNEMjkwMzU5Rl9jYzJjZTI0My03OGQ2LTQ2YTktYmUxZS0yNzk4MTk5ODUyN2IiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVGREFEOTQyLUVBMDItNEIyMy04QjlFLUJBQUNEMjkwMzU5Rl8wNjk5MjEyYi0wOTFmLTQzMDEtYjkyYi01OGFhNDZmNWE0NmQiDQp9"
 		}
 	}
 }
