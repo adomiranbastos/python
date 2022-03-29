@@ -1,0 +1,9 @@
+{
+	"name": "TesteRox",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84f5915e-5574-4fb6-b3d6-9a7cb1629d9f",
+		"tenantId": "afee81b3-b82d-43ec-8b0d-29f87ffbb61c"
+	}
+}
