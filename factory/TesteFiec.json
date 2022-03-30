@@ -1,0 +1,9 @@
+{
+	"name": "TesteFiec",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3ce91266-47a5-4f4b-9701-795ff3ab7310",
+		"tenantId": "afee81b3-b82d-43ec-8b0d-29f87ffbb61c"
+	}
+}
