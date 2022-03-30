@@ -1,0 +1,12 @@
+print ("Insira a Data")
+cdate = str(input())
+print ("Calorias do Café da Manhã")
+ccafe = int (input())
+print ("Calorias do Almoço")
+calmoco = int (input())
+print ("Calorias Lanche")
+clanche = int (input())
+print ("Calorias do Jantar")
+cjantar = int (input())
+total = ccafe + calmoco + clanche + cjantar
+print ("Total de Calorias: " + cdate + " : " + str(total))
