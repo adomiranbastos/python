@@ -9,8 +9,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "TBTeste",
-			"table": "Armazenamento de Blob do Azure arquivo"
+			"schema": "dbo",
+			"table": "AtracacaoFato"
 		}
 	}
 }
