@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "SourceDataset_8ei",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "DestinationDataset_8ei_New1",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -28,13 +28,38 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          Column_1 as string",
+				"          IDAtracacao as string,",
+				"          CDTUP as string,",
+				"          IDBerco as string,",
+				"          {Berço} as string,",
+				"          {Porto Atracação} as string,",
+				"          {Apelido Instalação Portuária} as string,",
+				"          {Complexo Portuário} as string,",
+				"          {Tipo da Autoridade Portuária} as string,",
+				"          {Data Atracação} as string,",
+				"          {Data Chegada} as string,",
+				"          {Data Desatracação} as string,",
+				"          {Data Início Operação} as string,",
+				"          {Data Término Operação} as string,",
+				"          Ano as string,",
+				"          Mes as string,",
+				"          {Tipo de Operação} as string,",
+				"          {Tipo de Navegação da Atracação} as string,",
+				"          {Nacionalidade do Armador} as string,",
+				"          FlagMCOperacaoAtracacao as string,",
+				"          Terminal as string,",
+				"          {Município} as string,",
+				"          UF as string,",
+				"          SGUF as string,",
+				"          {Região Geográfica} as string,",
+				"          {Nº da Capitania} as string,",
+				"          {Nº do IMO} as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
-				"     joinType:'inner',",
+				"     joinType:'outer',",
 				"     broadcast: 'auto')~> join1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
