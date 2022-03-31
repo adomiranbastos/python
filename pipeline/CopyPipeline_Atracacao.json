@@ -1,5 +1,5 @@
 {
-	"name": "CopyPipeline_Teste",
+	"name": "CopyPipeline_Atracacao",
 	"properties": {
 		"activities": [
 			{
@@ -342,13 +342,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_ykt",
+						"referenceName": "SourceDataset_Atracacao",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_ykt",
+						"referenceName": "DestinationDataset_Atracacao",
 						"type": "DatasetReference"
 					}
 				]
