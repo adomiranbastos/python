@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "2019Atracacao.csv",
 				"container": "atracacaofato"
 			},
 			"columnDelimiter": ",",
