@@ -17,6 +17,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "SourceDataset_8ei",
+						"type": "DatasetReference"
+					},
+					"name": "source3"
 				}
 			],
 			"sinks": [],
@@ -83,7 +90,38 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2"
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source(output(",
+				"          IDAtracacao as string,",
+				"          CDTUP as string,",
+				"          IDBerco as string,",
+				"          {Berço} as string,",
+				"          {Porto Atracação} as string,",
+				"          {Apelido Instalação Portuária} as string,",
+				"          {Complexo Portuário} as string,",
+				"          {Tipo da Autoridade Portuária} as string,",
+				"          {Data Atracação} as string,",
+				"          {Data Chegada} as string,",
+				"          {Data Desatracação} as string,",
+				"          {Data Início Operação} as string,",
+				"          {Data Término Operação} as string,",
+				"          Ano as string,",
+				"          Mes as string,",
+				"          {Tipo de Operação} as string,",
+				"          {Tipo de Navegação da Atracação} as string,",
+				"          {Nacionalidade do Armador} as string,",
+				"          FlagMCOperacaoAtracacao as string,",
+				"          Terminal as string,",
+				"          {Município} as string,",
+				"          UF as string,",
+				"          SGUF as string,",
+				"          {Região Geográfica} as string,",
+				"          {Nº da Capitania} as string,",
+				"          {Nº do IMO} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3"
 			]
 		}
 	}
