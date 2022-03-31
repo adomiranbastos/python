@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_imt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "TBTeste",
+			"table": "Armazenamento de Blob do Azure arquivo"
+		}
+	}
+}
