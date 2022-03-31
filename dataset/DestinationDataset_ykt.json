@@ -7,7 +7,121 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "IDAtracacao",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CDTUP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IDBerco",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Berço",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Porto_Atracação",
+				"type": "varchar"
+			},
+			{
+				"name": "Apelido_Instalação_Portuária",
+				"type": "varchar"
+			},
+			{
+				"name": "Complexo_Portuário",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tipo_da_Autoridade_Portuária",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Data_Atracação",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Data_Chegada",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Data_Desatracação",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Data_Início_Operação",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Data_Término_Operação",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Ano",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Mes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tipo_de_Operação",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tipo_de_Navegação_da_Atracação",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Nacionalidade_do_Armador",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "FlagMCOperacaoAtracacao",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Terminal",
+				"type": "varchar"
+			},
+			{
+				"name": "Município",
+				"type": "varchar"
+			},
+			{
+				"name": "UF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SGUF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Região_Geográfica",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Nº_da_Capitania",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Nº_do_IMO",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "AtracacaoFato"
