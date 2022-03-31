@@ -5,8 +5,12 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=servidorsuperpro.database.windows.net;initial catalog=databasefiec;user id=superpro",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVCRjkzQUI5LTRFNTMtNDhBQS1CNjhGLTFERTYzRkM2Q0JEQ185ZGQwYWYxMS1mYzU5LTRhMTEtYWQ0Yy1kOTMxNWZjMDkwZDkiDQp9"
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=servidorsuperpro.database.windows.net;initial catalog=testefiec;user id=superpro",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVCRjkzQUI5LTRFNTMtNDhBQS1CNjhGLTFERTYzRkM2Q0JEQ182M2Q2NjViMi04MDRjLTQ0YjQtODFjZS0wMjQ5Nzg3ZjBiYjEiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
