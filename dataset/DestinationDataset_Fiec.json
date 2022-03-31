@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_Fiec",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "Armazenamento de Blob do Azure arquivo"
+		}
+	}
+}
