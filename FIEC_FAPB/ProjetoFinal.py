@@ -4,7 +4,7 @@ if not os.path.exists("C:/FIEC_FAPB/"):
     os.makedirs("C:/FIEC_FAPB/")
 #obs para o codigo rodar corretamte o arquivo python ProjetoFinal.py
 #deverá está drento do diretório criado acima
-"""
+
 #1-fazendo o download dos arquivos
 import wget
 wget.download('http://web.antaq.gov.br/Sistemas/ArquivosAnuario/Arquivos/2019.zip', 'Anuario2019.zip')
@@ -41,7 +41,7 @@ newFileName=shutil.move(file_oldname, file_newname_newfile)
 file_oldname = os.path.join("C:/FIEC_FAPB/", "2021Carga.txt")
 file_newname_newfile = os.path.join("C:/FIEC_FAPB/", "2021Carga.csv")
 newFileName=shutil.move(file_oldname, file_newname_newfile)
-"""
+
 #criando dataframes com os arquivos Atracacao_2019a2021
 import pandas as pd
 df1 = pd.read_csv("C:/FIEC_FAPB/2019Atracacao.csv", sep=';', encoding='utf8')
@@ -73,7 +73,7 @@ df6 = df6.iloc[:, 0:16]
 #juntantando corretamente todas as planilhas de Carga_2019a2021
 dftotal2=pd.concat([df4,df5,df6])
 #gerando arquivo unico csv das Carga_2019a2021
-dftotal2.to_csv("carga_fato.csv", sep=';', encoding="utf8") 
+dftotal2.to_csv("carga_fato.csv", sep=';', encoding="utf8")
 
 
 # as consultas nos arquivos gerados foram utilizando o power query do excel
