@@ -353,13 +353,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_cxb",
+						"referenceName": "SourceDataset_Carga",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_cxb",
+						"referenceName": "DestinationDataset_Carga",
 						"type": "DatasetReference"
 					}
 				]
