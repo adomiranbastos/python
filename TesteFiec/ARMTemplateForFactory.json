@@ -1,0 +1,696 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nome do Data Factory",
+			"defaultValue": "TesteFiec"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'accountKey' de 'AzureDataLakeStorage1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'connectionString' de 'AzureSqlDatabase1'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://armazenamentosuperpro.dfs.core.windows.net"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPipeline_Teste')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_ykt",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "atracacaofato//"
+							},
+							{
+								"name": "Destination",
+								"value": "TBTeste.Armazenamento de Blob do Azure arquivo"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": "*",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings",
+									"skipLineCount": 0
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate"
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "IDAtracacao",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "IDAtracacao",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "CDTUP",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "CDTUP",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "IDBerco",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "IDBerco",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Berço",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Berço",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Porto Atracação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Porto Atracação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Apelido Instalação Portuária",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Apelido Instalação Portuária",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Complexo Portuário",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Complexo Portuário",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Tipo da Autoridade Portuária",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Tipo da Autoridade Portuária",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Data Atracação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Data Atracação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Data Chegada",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Data Chegada",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Data Desatracação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Data Desatracação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Data Início Operação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Data Início Operação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Data Término Operação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Data Término Operação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Ano",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Ano",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Mes",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Mes",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Tipo de Operação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Tipo de Operação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Tipo de Navegação da Atracação",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Tipo de Navegação da Atracação",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nacionalidade do Armador",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Nacionalidade do Armador",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FlagMCOperacaoAtracacao",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "FlagMCOperacaoAtracacao",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Terminal",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Terminal",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Município",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Município",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UF",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "UF",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SGUF",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SGUF",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Região Geográfica",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Região Geográfica",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nº da Capitania",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Nº da Capitania",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nº do IMO",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Nº do IMO",
+											"type": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_ykt",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestinationDataset_ykt",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_ykt')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_ykt')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_ykt')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "AtracacaoFato"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_ykt')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "atracacaofato"
+					},
+					"columnDelimiter": ";",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "IDAtracacao",
+						"type": "String"
+					},
+					{
+						"name": "CDTUP",
+						"type": "String"
+					},
+					{
+						"name": "IDBerco",
+						"type": "String"
+					},
+					{
+						"name": "Berço",
+						"type": "String"
+					},
+					{
+						"name": "Porto Atracação",
+						"type": "String"
+					},
+					{
+						"name": "Apelido Instalação Portuária",
+						"type": "String"
+					},
+					{
+						"name": "Complexo Portuário",
+						"type": "String"
+					},
+					{
+						"name": "Tipo da Autoridade Portuária",
+						"type": "String"
+					},
+					{
+						"name": "Data Atracação",
+						"type": "String"
+					},
+					{
+						"name": "Data Chegada",
+						"type": "String"
+					},
+					{
+						"name": "Data Desatracação",
+						"type": "String"
+					},
+					{
+						"name": "Data Início Operação",
+						"type": "String"
+					},
+					{
+						"name": "Data Término Operação",
+						"type": "String"
+					},
+					{
+						"name": "Ano",
+						"type": "String"
+					},
+					{
+						"name": "Mes",
+						"type": "String"
+					},
+					{
+						"name": "Tipo de Operação",
+						"type": "String"
+					},
+					{
+						"name": "Tipo de Navegação da Atracação",
+						"type": "String"
+					},
+					{
+						"name": "Nacionalidade do Armador",
+						"type": "String"
+					},
+					{
+						"name": "FlagMCOperacaoAtracacao",
+						"type": "String"
+					},
+					{
+						"name": "Terminal",
+						"type": "String"
+					},
+					{
+						"name": "Município",
+						"type": "String"
+					},
+					{
+						"name": "UF",
+						"type": "String"
+					},
+					{
+						"name": "SGUF",
+						"type": "String"
+					},
+					{
+						"name": "Região Geográfica",
+						"type": "String"
+					},
+					{
+						"name": "Nº da Capitania",
+						"type": "String"
+					},
+					{
+						"name": "Nº do IMO",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "teste",
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflowTeste')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "SourceDataset_ykt",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DestinationDataset_ykt",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"scriptLines": [
+						"source(output(",
+						"          IDAtracacao as string,",
+						"          CDTUP as string,",
+						"          IDBerco as string,",
+						"          {Berço} as string,",
+						"          {Porto Atracação} as string,",
+						"          {Apelido Instalação Portuária} as string,",
+						"          {Complexo Portuário} as string,",
+						"          {Tipo da Autoridade Portuária} as string,",
+						"          {Data Atracação} as string,",
+						"          {Data Chegada} as string,",
+						"          {Data Desatracação} as string,",
+						"          {Data Início Operação} as string,",
+						"          {Data Término Operação} as string,",
+						"          Ano as string,",
+						"          Mes as string,",
+						"          {Tipo de Operação} as string,",
+						"          {Tipo de Navegação da Atracação} as string,",
+						"          {Nacionalidade do Armador} as string,",
+						"          FlagMCOperacaoAtracacao as string,",
+						"          Terminal as string,",
+						"          {Município} as string,",
+						"          UF as string,",
+						"          SGUF as string,",
+						"          {Região Geográfica} as string,",
+						"          {Nº da Capitania} as string,",
+						"          {Nº do IMO} as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_ykt')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_ykt')]"
+			]
+		}
+	]
+}
