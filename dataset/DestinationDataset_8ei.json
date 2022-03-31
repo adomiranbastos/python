@@ -6,6 +6,9 @@
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "AzureSqlTable"
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[dbo].[TBAtracacao_fato]"
+		}
 	}
 }
