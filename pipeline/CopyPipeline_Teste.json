@@ -1,0 +1,359 @@
+{
+	"name": "CopyPipeline_Teste",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_ykt",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "atracacaofato//"
+					},
+					{
+						"name": "Destination",
+						"value": "TBTeste.Armazenamento de Blob do Azure arquivo"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "IDAtracacao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IDAtracacao",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CDTUP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CDTUP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDBerco",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IDBerco",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Berço",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Berço",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Porto Atracação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Porto Atracação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Apelido Instalação Portuária",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Apelido Instalação Portuária",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Complexo Portuário",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Complexo Portuário",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tipo da Autoridade Portuária",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tipo da Autoridade Portuária",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Atracação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data Atracação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Chegada",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data Chegada",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Desatracação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data Desatracação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Início Operação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data Início Operação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Término Operação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data Término Operação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ano",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ano",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Mes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tipo de Operação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tipo de Operação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tipo de Navegação da Atracação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tipo de Navegação da Atracação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nacionalidade do Armador",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nacionalidade do Armador",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagMCOperacaoAtracacao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagMCOperacaoAtracacao",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Terminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Terminal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Município",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Município",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UF",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UF",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGUF",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SGUF",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Região Geográfica",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Região Geográfica",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nº da Capitania",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nº da Capitania",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nº do IMO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nº do IMO",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ykt",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_ykt",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
