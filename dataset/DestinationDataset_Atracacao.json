@@ -123,8 +123,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "TBTeste",
-			"table": ""
+			"schema": "dbo",
+			"table": "TBCargaFato"
 		}
 	}
 }
