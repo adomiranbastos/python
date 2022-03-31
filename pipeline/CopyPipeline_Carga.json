@@ -1,0 +1,370 @@
+{
+	"name": "CopyPipeline_Carga",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_cxb",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cargafato//"
+					},
+					{
+						"name": "Destination",
+						"value": "TBCargaFato."
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "IDCarga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IDCarga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IDAtracacao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IDAtracacao",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Origem",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Origem",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Destino",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Destino",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CDMercadoria",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CDMercadoria",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tipo Operação da Carga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tipo Operação da Carga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Carga Geral Acondicionamento",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Carga Geral Acondicionamento",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ConteinerEstado",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ConteinerEstado",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tipo Navegação",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tipo Navegação",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagAutorizacao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagAutorizacao",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagCabotagem",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagCabotagem",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagCabotagemMovimentacao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagCabotagemMovimentacao",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagConteinerTamanho",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagConteinerTamanho",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagLongoCurso",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagLongoCurso",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagMCOperacaoCarga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagMCOperacaoCarga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagOffshore",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagOffshore",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FlagTransporteViaInterioir",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FlagTransporteViaInterioir",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Percurso Transporte em vias Interiores",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Percurso Transporte em vias Interiores",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Percurso Transporte Interiores",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Percurso Transporte Interiores",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STNaturezaCarga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "STNaturezaCarga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STSH2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "STSH2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STSH4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "STSH4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Natureza da Carga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Natureza da Carga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Sentido",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Sentido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEU",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TEU",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QTCarga",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "QTCarga",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VLPesoCargaBruta",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VLPesoCargaBruta",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_cxb",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_cxb",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
