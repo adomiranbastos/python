@@ -12,7 +12,11 @@
 					"name": "SourceAtracacao1"
 				},
 				{
-					"name": "source2"
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "SourceAtracacao2"
 				},
 				{
 					"name": "source3"
@@ -27,8 +31,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> SourceAtracacao1",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2",
+				"source(output(",
+				"          Column_1 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> SourceAtracacao2",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> source3"
 			]
