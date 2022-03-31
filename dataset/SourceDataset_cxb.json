@@ -1,0 +1,131 @@
+{
+	"name": "SourceDataset_cxb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "cargafato"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "IDCarga",
+				"type": "String"
+			},
+			{
+				"name": "IDAtracacao",
+				"type": "String"
+			},
+			{
+				"name": "Origem",
+				"type": "String"
+			},
+			{
+				"name": "Destino",
+				"type": "String"
+			},
+			{
+				"name": "CDMercadoria",
+				"type": "String"
+			},
+			{
+				"name": "Tipo Operação da Carga",
+				"type": "String"
+			},
+			{
+				"name": "Carga Geral Acondicionamento",
+				"type": "String"
+			},
+			{
+				"name": "ConteinerEstado",
+				"type": "String"
+			},
+			{
+				"name": "Tipo Navegação",
+				"type": "String"
+			},
+			{
+				"name": "FlagAutorizacao",
+				"type": "String"
+			},
+			{
+				"name": "FlagCabotagem",
+				"type": "String"
+			},
+			{
+				"name": "FlagCabotagemMovimentacao",
+				"type": "String"
+			},
+			{
+				"name": "FlagConteinerTamanho",
+				"type": "String"
+			},
+			{
+				"name": "FlagLongoCurso",
+				"type": "String"
+			},
+			{
+				"name": "FlagMCOperacaoCarga",
+				"type": "String"
+			},
+			{
+				"name": "FlagOffshore",
+				"type": "String"
+			},
+			{
+				"name": "FlagTransporteViaInterioir",
+				"type": "String"
+			},
+			{
+				"name": "Percurso Transporte em vias Interiores",
+				"type": "String"
+			},
+			{
+				"name": "Percurso Transporte Interiores",
+				"type": "String"
+			},
+			{
+				"name": "STNaturezaCarga",
+				"type": "String"
+			},
+			{
+				"name": "STSH2",
+				"type": "String"
+			},
+			{
+				"name": "STSH4",
+				"type": "String"
+			},
+			{
+				"name": "Natureza da Carga",
+				"type": "String"
+			},
+			{
+				"name": "Sentido",
+				"type": "String"
+			},
+			{
+				"name": "TEU",
+				"type": "String"
+			},
+			{
+				"name": "QTCarga",
+				"type": "String"
+			},
+			{
+				"name": "VLPesoCargaBruta",
+				"type": "String"
+			}
+		]
+	}
+}
