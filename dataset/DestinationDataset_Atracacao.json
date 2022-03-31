@@ -123,8 +123,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "TBAtracacao",
-			"table": ""
+			"schema": "dbo",
+			"table": "TBAtracacaoFato"
 		}
 	}
 }
