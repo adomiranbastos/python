@@ -123,8 +123,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "AtracacaoFato"
+			"schema": "TBTeste",
+			"table": "Armazenamento de Blob do Azure arquivo"
 		}
 	}
 }
