@@ -1,0 +1,9 @@
+{
+	"name": "TesteEcad",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "37ec4c98-4711-4d8f-a63d-a812f11a2884",
+		"tenantId": "afee81b3-b82d-43ec-8b0d-29f87ffbb61c"
+	}
+}
