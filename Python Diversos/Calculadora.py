@@ -1,46 +1,40 @@
+from functools import reduce
 
+entrada = ''
 
-#calculadora a mina maneira
-valor1=input('Insira o valor 1: ')
-if valor1.isnumeric() ==False:
-    print('Insira somente números')
-    exit()
-operacao= input('Escolha qual a operação matemática + (soma) - (subtração) * (multiplicação): ')
-valor2=input('Insira o valor 2: ')
-if valor2.isnumeric() ==False:
-    print('Insira somente números')
-    exit()
+def pega_inputs():
+    entrada = input("Por favor digite o calculo que deseja fazer:\n")
+    print(calc(str(entrada)))
     
-valor1= int(valor1)
-valor2= int(valor2)
- 
-if operacao == ('+'):
-    sum = (valor1 + valor2)
-   
-    print('Resultado da Soma é: ' + str(sum))
- 
-elif operacao == ('-'):
-    subtracao = (valor1 - valor2)
-    print('Resultado da Subtração é: ' + str(subtracao)) 
- 
-elif operacao == ('*'):
-     multiplicacao = (valor1 * valor2)
-     print('Resultado da multiplicação é: ' + str(multiplicacao)) 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
-else:
-     operacao != ('*') or ('+') or ('-')
-     print('insira uma operação correta')
- 
- #if operacao != ('+') or ('-') or ('*')):
-  #       print('escolha uma operação incorreta (+ , - , ou *)')
+def calc(expr):
+    if is_number(expr):
+        return float(expr)    
+    arr = expr.split('+')
+    if len(arr) > 1:
+        return sum(map(calc, arr))
+    arr = expr.split('-')
+    if len(arr) > 1:
+        return reduce(lambda x,y: x-y, map(calc, arr))
+    arr = expr.split('*')
+    if len(arr) > 1:
+        return reduce(lambda x,y: x*y, map(calc, arr), 1)
+    arr = expr.split('/')
+    if len(arr) > 1:
+        return reduce(lambda x,y: x/y, map(calc, arr))
+    
+def menu():
+    mop = input("Selecione a opção desejada\n\n1 - Calcular\n2 - Sair\n\n Opção: ")
+    if(mop == '1'):
+        pega_inputs()
+    else:
+        quit()
 
-
-# subtracao = valor1 - valor2
-# multiplicacao = valor1 * valor2
-# divisao = valor1 + valor2
-# resto = valor1 % valor2
-# expoente = valor1 ** valor2
-#print(valor1) operacao (valor2)
-
-
-
+if __name__ == "__main__":
+    menu()
